@@ -19,11 +19,19 @@ typedef struct PatientData
 
 typedef struct PatientRecords
 {
-    PatientData_t       Patient;
+    PatientData_t*       Patient;
     PatientRecords_t*   pNext;
 }PatientRecords_t;
 
+typedef enum Error
+{
+    Succeded    ,
+    IdExist     
 
+}Error_t ;
 
+Error_t AddPatient(uint16_t Copy_u16Id , char* Copy_ptrName ,uint8_t Copy_u8Age ,uint8_t Copy_u8Gender );
+
+void ViewPatient(uint16_t Copy_u16Id);
 
 #endif
