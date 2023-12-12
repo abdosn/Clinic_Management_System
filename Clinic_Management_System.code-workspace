@@ -6,7 +6,8 @@
 	],
 	"settings": {
 		"files.associations": {
-			"patientrecords.h": "c"
+			"patientrecords.h": "c",
+			"stdlib.h": "c"
 		}
 	}
 }

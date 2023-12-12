@@ -3,6 +3,8 @@
 
 #include <string.h>
 #include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 #define MALE    0
 #define FEMALE  1
@@ -20,7 +22,7 @@ typedef struct PatientData
 typedef struct PatientRecords
 {
     PatientData_t*       Patient;
-    PatientRecords_t*   pNext;
+    struct PatientRecords *   pNext;
 }PatientRecords_t;
 
 typedef enum Error

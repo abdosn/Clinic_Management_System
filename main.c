@@ -19,15 +19,20 @@ int mode = 0;
 char SavedPassword[30] = "1234";
 void main(void)
 {
-    scanf("1-Admin mode\n2-User mode\nEnter mode number : %d" , &mode);
+    while (1)
+    {
 
+    
+    printf("1-Admin mode\n2-User mode\nEnter mode number : ");
+    scanf("%d" , &mode);
     if(mode == 1) // Admin Mode
     {
         int trails = 3 ;
         char EnteredPassword[30];
         while(trails != 0)
         {
-            scanf("Enter Password : %s",&EnteredPassword);
+            printf("Enter Password : ");
+            scanf("%s",&EnteredPassword);
             if(strcmp(SavedPassword , EnteredPassword) == 0)
             {
                 printf("Access Granted\n");
@@ -36,7 +41,7 @@ void main(void)
             else
             {
                 trails --;
-                printf("Wrong password\nYou have %d trails left",trails);
+                printf("Wrong password\nYou have %d trails left\n",trails);
                 if(trails == 0)
                 {
                     return;
@@ -44,15 +49,24 @@ void main(void)
             }
         }
         int AdminMode;
-        scanf("Options Avaliable\n1-Add new patient record\n2-Edit patient record\n3-Reserve a slot with the doctor\n4-Cancel reservation\nEnter option number : %d",&AdminMode);
-        switch (AdminMode)
-        {
-        case 1:
-            uint16_t EnteredID;
+        printf("Options Avaliable\n1-Add new patient record\n2-Edit patient record\n3-Reserve a slot with the doctor\n4-Cancel reservation\nEnter option number : ");
+        scanf("%d",&AdminMode);
+        uint16_t EnteredID;
             char*EnteredName;
             uint8_t EnteredAge;
             uint8_t EnteredGender;
-            scanf("## Add new patient record ##\nEnter the following data\nPatient ID : %d\nName of patient : %s\nAge : %d\nGender(Male 0 , Female 1) : %d" , &EnteredID , &EnteredName , &EnteredAge , &EnteredGender);
+        switch (AdminMode)
+        {
+        case 1:
+        printf("## Add new patient record ##\nEnter the following data\nPatient ID : ");
+        scanf("%d" , &EnteredID);
+        printf("Name of patient : ");
+        scanf("%s" , &EnteredName);
+        printf("Age : ");
+        scanf("%d" , &EnteredAge);
+        printf("Gender(Male 0 , Female 1) : ");
+        scanf("%d" , &EnteredGender);
+        
             AddPatient(EnteredID , EnteredName , EnteredAge , EnteredGender);   
             break;
         case 2:
@@ -73,12 +87,15 @@ void main(void)
     else if(mode == 2)
     {
         int UserMode;
-        scanf("Options Avaliable\n1-View patient record\n2-View today's reservations\nEnter option number : %d",&UserMode);
+        printf("Options Avaliable\n1-View patient record\n2-View today's reservations\nEnter option number : ");
+        scanf("%d",&UserMode);
+            uint16_t EnteredId;
+
         switch (UserMode)
         {
         case 1:
-            uint16_t EnteredId;
-            scanf("## View patient record ##\nEnter Patient Id : %d" , &EnteredId);
+        printf("## View patient record ##\nEnter Patient Id : ");
+            scanf("%d" , &EnteredId);
             ViewPatient(EnteredId);
             break;
         
@@ -95,5 +112,5 @@ void main(void)
         printf("Wrong Entry..Try again\n");
     }
 
-
+    }
 }

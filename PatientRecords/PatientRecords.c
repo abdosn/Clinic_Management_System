@@ -30,17 +30,23 @@ Error_t AddPatient(uint16_t Copy_u16Id , char* Copy_ptrName ,uint8_t Copy_u8Age 
     {
         /* Do nothing */
     }
-    PatientRecords_t * Loc_ptrNewRecord = (PatientRecords_t *)malloc(sizeof(PatientRecords_t));
+    PatientData_t * Loc_ptrNewRecord = (PatientData_t *)malloc(sizeof(PatientData_t));
     
-    Loc_ptrNewRecord->Patient->Id = Copy_u16Id;
-    strcpy(Loc_ptrNewRecord->Patient->Name , Copy_ptrName);
-    Loc_ptrNewRecord->Patient->Age = Copy_u8Age;
-    Loc_ptrNewRecord->Patient->Gender = Copy_u8Gender;
+    Loc_ptrNewRecord->Id = Copy_u16Id;
+    strcpy(Loc_ptrNewRecord->Name , Copy_ptrName);
+    Loc_ptrNewRecord->Age = Copy_u8Age;
+    Loc_ptrNewRecord->Gender = Copy_u8Gender;
     
+    while (Loc_ptrRecords != NULL)
+    {
+        Loc_ptrRecords = Loc_ptrRecords->pNext;
+    }
+
+
     
     Loc_ptrRecords->Patient = Loc_ptrNewRecord;
 
-    
+    return Succeded;
     
 }
 
