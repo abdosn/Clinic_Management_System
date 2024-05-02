@@ -69,6 +69,7 @@ void main(void)
         
             AddPatient(EnteredID , EnteredName , EnteredAge , EnteredGender);   
             break;
+        //TODO
         case 2:
 
             break;
@@ -98,7 +99,7 @@ void main(void)
             scanf("%d" , &EnteredId);
             ViewPatient(EnteredId);
             break;
-        
+        //TODO
         case 2:
 
             break;

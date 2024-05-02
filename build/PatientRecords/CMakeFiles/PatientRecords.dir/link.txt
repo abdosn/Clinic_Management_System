@@ -1,2 +1,2 @@
-"D:\STudy\IMT Embedded systems\IMT Tools\IMT Tools\TOOL\mingw64\bin\ar.exe" qc libPatientRecords.a CMakeFiles/PatientRecords.dir/PatientRecords.c.obj
-"D:\STudy\IMT Embedded systems\IMT Tools\IMT Tools\TOOL\mingw64\bin\ranlib.exe" libPatientRecords.a
+C:/MinGW/bin/ar.exe qc libPatientRecords.a CMakeFiles/PatientRecords.dir/PatientRecords.c.obj
+C:/MinGW/bin/ranlib.exe libPatientRecords.a

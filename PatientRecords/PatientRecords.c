@@ -1,8 +1,28 @@
+/**
+ * @file PatientRecords.c
+ * @author Abdelrahman Sobhy (abdonassar@gmail.com)
+ * @brief 
+ * @version 0.1
+ * @date 2023-10-05
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
 #include "PatientRecords.h"
 
 
 static PatientRecords_t MyRecords;
 static uint16_t NoOfPatients;
+
+
+/**
+ * @brief Add new patient record
+ * @param Copy_u16Id ID for the patient -- shall be unique
+ * @param Copy_ptrName Name of the patient
+ * @param Copy_u8Age Age of the patient
+ * @param Copy_u8Gender Gender of patient should be a value from @ref GENDER
+ * @return IdExist if Id is repeated or succedded otherwise //TODO Add multiple error returns for various errors 
+ */
 Error_t AddPatient(uint16_t Copy_u16Id , char* Copy_ptrName ,uint8_t Copy_u8Age ,uint8_t Copy_u8Gender )
 {
     PatientRecords_t * Loc_ptrRecords = &MyRecords;
@@ -49,16 +69,21 @@ Error_t AddPatient(uint16_t Copy_u16Id , char* Copy_ptrName ,uint8_t Copy_u8Age 
     return Succeded;
     
 }
-
+//TODO
 void RemovePatient(uint16_t Copy_u16Id)
 {
 
 }
-
+//TODO
 void EditPatient(uint16_t Copy_u16Id)
 {
 
 }
+
+/**
+ * @brief View patient record and print it on screen
+ * @param Copy_u16Id ID of patient
+ */
 void ViewPatient(uint16_t Copy_u16Id)
 {
     PatientRecords_t * Loc_ptrRecords = &MyRecords;

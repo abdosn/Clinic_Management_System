@@ -1,15 +1,41 @@
+/**
+ * @file PatientRecords.h
+ * @author Abdelrahman Sobhy (abdonassar@gmail.com)
+ * @brief 
+ * @version 0.1
+ * @date 2023-10-05
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
+
+
+/* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef PATIENT_RECORDS_H_
 #define PATIENT_RECORDS_H_
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+/* Includes ------------------------------------------------------------------*/
 #include <string.h>
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
 
+/** @defgroup GENDER
+ * @{
+*/
 #define MALE    0
 #define FEMALE  1
+/**
+ * @}
+*/
 
-
+/**
+ * @brief Patient Data structure definition
+ */
 typedef struct PatientData
 {
     char Name[50];
@@ -19,12 +45,19 @@ typedef struct PatientData
 }PatientData_t;
 
 
+/**
+ * @brief Patient Records structure definition
+ */
 typedef struct PatientRecords
 {
     PatientData_t*       Patient;
     struct PatientRecords *   pNext;
 }PatientRecords_t;
 
+
+/**
+ * @brief Error structure definition
+ */
 typedef enum Error
 {
     Succeded    ,
@@ -32,8 +65,23 @@ typedef enum Error
 
 }Error_t ;
 
-Error_t AddPatient(uint16_t Copy_u16Id , char* Copy_ptrName ,uint8_t Copy_u8Age ,uint8_t Copy_u8Gender );
 
+/** @defgroup PatientRecords_Exported_Functions
+ * @{
+*/
+
+
+
+Error_t AddPatient(uint16_t Copy_u16Id , char* Copy_ptrName ,uint8_t Copy_u8Age ,uint8_t Copy_u8Gender );
 void ViewPatient(uint16_t Copy_u16Id);
 
+/**
+ * @}
+*/
+
+
+#ifdef __cplusplus
+}
 #endif
+
+#endif /* PATIENT_RECORDS_H_ */

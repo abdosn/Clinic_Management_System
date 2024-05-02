@@ -1,4 +1,4 @@
-# Install script for directory: D:/My_Git/Clinic_Management_System/PatientRecords
+# Install script for directory: C:/Users/abdon/OneDrive/Desktop/Clinic_Management_System/PatientRecords
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,6 +34,6 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "D:/STudy/IMT Embedded systems/IMT Tools/IMT Tools/TOOL/mingw64/bin/objdump.exe")
+  set(CMAKE_OBJDUMP "C:/MinGW/bin/objdump.exe")
 endif()
 
