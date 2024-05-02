@@ -1,6 +1,0 @@
-C:/Users/abdon/OneDrive/Desktop/Clinic_Management_System/build/CMakeFiles/Clinic_Management_System.dir
-C:/Users/abdon/OneDrive/Desktop/Clinic_Management_System/build/CMakeFiles/edit_cache.dir
-C:/Users/abdon/OneDrive/Desktop/Clinic_Management_System/build/CMakeFiles/rebuild_cache.dir
-C:/Users/abdon/OneDrive/Desktop/Clinic_Management_System/build/PatientRecords/CMakeFiles/PatientRecords.dir
-C:/Users/abdon/OneDrive/Desktop/Clinic_Management_System/build/PatientRecords/CMakeFiles/edit_cache.dir
-C:/Users/abdon/OneDrive/Desktop/Clinic_Management_System/build/PatientRecords/CMakeFiles/rebuild_cache.dir
