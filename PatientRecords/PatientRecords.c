@@ -69,15 +69,62 @@ Error_t AddPatient(uint16_t Copy_u16Id , char* Copy_ptrName ,uint8_t Copy_u8Age 
     return Succeded;
     
 }
-//TODO
-void RemovePatient(uint16_t Copy_u16Id)
+/**
+ * @brief Remove patient record
+ * 
+ * @param Copy_u16Id Id of the patient to be removed
+ * @return Error_t IdNotFound or succeded
+ */
+Error_t RemovePatient(uint16_t Copy_u16Id)
 {
+    PatientRecords_t * Loc_ptrRecords = &MyRecords;
+    PatientRecords_t * Loc_ptrPrev = &MyRecords;
+    while(Loc_ptrRecords != NULL || Loc_ptrRecords->Patient->Id != Copy_u16Id)
+    {
+        Loc_ptrPrev = Loc_ptrRecords;
+        Loc_ptrRecords = Loc_ptrRecords->pNext;
+    }
 
+    if (Loc_ptrRecords == NULL)
+    {
+        return IdNotFound;
+    }
+    else
+    {
+        free(Loc_ptrRecords->Patient);
+        Loc_ptrPrev->pNext = Loc_ptrRecords->pNext;
+        Loc_ptrRecords->Patient = NULL;
+        return Succeded;
+    }
+    
 }
-//TODO
-void EditPatient(uint16_t Copy_u16Id)
+/**
+ * @brief Edit Patient data
+ * 
+ * @param Copy_u16OldId Id of the patient to be edited
+ * @param Copy_NewPatientData New Patient Data
+ * @return Error_t IdNotFound or Succeded
+ */
+Error_t EditPatient(uint16_t Copy_u16OldId, PatientData_t Copy_NewPatientData)
 {
+    PatientRecords_t * Loc_ptrRecords = &MyRecords;
+    while(Loc_ptrRecords != NULL || Loc_ptrRecords->Patient->Id != Copy_u16OldId)
+    {
+        Loc_ptrRecords = Loc_ptrRecords->pNext;
+    }
 
+    if(Loc_ptrRecords == NULL)
+    {
+        return IdNotFound;
+    }
+    else
+    {
+        Loc_ptrRecords->Patient->Id = Copy_NewPatientData.Id;
+        Loc_ptrRecords->Patient->Age = Copy_NewPatientData.Age;
+        strcpy(Loc_ptrRecords->Patient->Name , Copy_NewPatientData.Name);
+        Loc_ptrRecords->Patient->Gender = Copy_NewPatientData.Gender;
+        return Succeded;
+    }
 }
 
 /**

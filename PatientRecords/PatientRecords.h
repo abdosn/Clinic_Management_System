@@ -61,7 +61,8 @@ typedef struct PatientRecords
 typedef enum Error
 {
     Succeded    ,
-    IdExist     
+    IdExist     ,
+    IdNotFound
 
 }Error_t ;
 
@@ -73,7 +74,12 @@ typedef enum Error
 
 
 Error_t AddPatient(uint16_t Copy_u16Id , char* Copy_ptrName ,uint8_t Copy_u8Age ,uint8_t Copy_u8Gender );
+Error_t RemovePatient(uint16_t Copy_u16Id);
 void ViewPatient(uint16_t Copy_u16Id);
+Error_t EditPatient(uint16_t Copy_u16OldId, PatientData_t Copy_NewPatientData);
+void ReserveSlot(uint16_t id);
+void CancelReservation(uint16_t id);
+void ViewReservations();
 
 /**
  * @}
